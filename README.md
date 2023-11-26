@@ -10,3 +10,4 @@
 
  # git指令
  git push --force (已這台的code為基準)
+ git config --global --add pull.rebase true
