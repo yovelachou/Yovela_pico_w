@@ -20,13 +20,14 @@ def playGame():
         else:
              print("數字太小了")
              min =keyin +1
-    print(f"遊戲結束，您共猜了{count}次")     
+       
 
 while True:
     playGame()
     is_play = py.inputYesNo("您還要繼續玩嗎?(y,n):")  
     if is_play == "no":
           break
+print(f"遊戲結束，您共猜了{count}次")  
     
    
 
