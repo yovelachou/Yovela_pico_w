@@ -9,7 +9,7 @@ def callback2(t:Timer):
 def callback3(t:Timer):
     print(3)
     t.deinit()
-    
+     
 time1 = Timer()
 time1.init(freq=1,callback=callback1)
 
