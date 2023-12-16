@@ -21,6 +21,9 @@
 
  # 下載Github desktop & Thonny
 
+## Thonny設定pico直議器方式
+
+![Thonny直議器設定](image-2.png)
 
 ![上課架構圖](image-1.png)
 
