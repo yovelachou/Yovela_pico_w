@@ -19,7 +19,7 @@
  # 其他
  help(套件名稱)  可查詢套件使用教學
 
- # 下載Github destop & Thonny
+ # 下載Github desktop & Thonny
 
 
 
