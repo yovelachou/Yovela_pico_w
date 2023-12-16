@@ -25,6 +25,8 @@
 
 ![Thonny直議器設定](image-2.png)
 
+# 上課架構圖
+
 ![上課架構圖](image-1.png)
 
 
