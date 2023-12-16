@@ -5,7 +5,7 @@ def callback1(t):
     
 def callback2(t):
     print(2)
-
+ 
 
 time1 = Timer()
 time1.init(freq=1,callback=callback1)
