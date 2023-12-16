@@ -22,5 +22,7 @@
  # 下載Github desktop & Thonny
 
 
+![上課架構圖](image-1.png)
+
 
  https://www.raspberrypi.com/documentation/microcontrollers/images/picow-pinout.svg
