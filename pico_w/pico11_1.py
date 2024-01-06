@@ -17,11 +17,12 @@ while max_wait > 0:
     time.sleep(1)
 
 
-#有可能根本沒有連線
+#沒有WIFI的處理
 if wlan.status() != 3:
     #連線失敗，重新開機
     #wdt = WDT(timeout=2000)
     #wdt.feed()
     raise RuntimeError("連線失敗") #開發可寫這行重RUN即可，當產品化時請用上面註解的寫法，讓產品關機重開
+else:
     print("連線成功")
     print(wlan.ifconfig())
