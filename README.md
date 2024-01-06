@@ -33,3 +33,5 @@
  https://www.raspberrypi.com/documentation/microcontrollers/images/picow-pinout.svg
 
 
+LINE NOTIFY 權杖
+vF4KX3t8lCjPqWXChUdhMKJh8uIx741yfyhCeEzW5Zd
