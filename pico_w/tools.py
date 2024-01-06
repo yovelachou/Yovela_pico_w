@@ -1,0 +1,48 @@
+import network
+import time
+import urequests as requests
+
+
+
+
+ssid = 'Yovela'
+password = '12345678'
+wlan = network.WLAN(network.STA_IF)
+wlan.active(True)
+wlan.connect(ssid,password)
+wlan.config(pm =0xa11140) #預設是省電模式，可以設為非省電模式
+
+def connect():
+    max_wait= 10
+    #處理正在連線
+    while max_wait > 0:
+        max_wait -= 1
+        status =  wlan.status()
+        if status < 0 or status >=3:  # 0,1,2:等待  3:連線成功 -1,-2,-3連線失敗
+            break
+        print("等待連線")
+        time.sleep(1)
+
+
+    #沒有WIFI的處理
+    if wlan.status() != 3:
+        #連線失敗，重新開機
+        #wdt = WDT(timeout=2000)
+        #wdt.feed()
+        raise RuntimeError("連線失敗") #開發可寫這行重RUN即可，當產品化時請用上面註解的寫法，讓產品關機重開
+    else:
+        print("連線成功")
+        print(wlan.ifconfig())
+        
+        
+        
+def reconnect():
+    if wlan.status() != 3:
+        print(f"無法連線{wlan.status()}")
+        return
+    else:
+        print("重新連線")
+        waln.disconnect()
+        wlan.connect(ssid,password)
+        connect()
+                
