@@ -9,4 +9,8 @@ while not wlan.isconnected() and wlan.status() >= 0:
     print("Waiting to connect:")
     time.sleep(1)
     
-print(wlan.ifconfig())
+if wlan.isconnected():
+    print("連線成功")
+else:   
+    print("連線失敗")
+ 

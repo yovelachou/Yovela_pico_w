@@ -25,6 +25,6 @@ if wlan.status() != 3:
 else:
      print("連線成功")
      configure = wlan.ifconfig()
-     print(f"ip={configure(0)}")
+     print(f"ip={configure}")
     
     
