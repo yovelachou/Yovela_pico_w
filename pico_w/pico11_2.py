@@ -1,6 +1,7 @@
 import network
 import time
-from machine import WDT
+from machine import WDT,Timer
+
 def connect():
     wlan = network.WLAN(network.STA_IF)
     wlan.active(True)
@@ -27,4 +28,12 @@ def connect():
     else:
         print("連線成功")
         print(wlan.ifconfig())
+        
+def mycallback(t:Timer):
+    print("Hello World")
+    t.deinit()
+    
 connect()
+tim = Timer()
+tim.init(period=1000,callback=mycallback)
+  
