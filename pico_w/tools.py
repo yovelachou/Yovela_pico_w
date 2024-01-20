@@ -1,48 +1,62 @@
 import network
-import time
 import urequests as requests
+import time
+import rp2
+from machine import WDT
 
-
+rp2.country('TW')
 
 
 ssid = 'Yovela'
 password = '12345678'
+
+
+
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
-wlan.connect(ssid,password)
-wlan.config(pm =0xa11140) #預設是省電模式，可以設為非省電模式
+wlan.connect(ssid, password)
+wlan.config(pm = 0xa11140)
 
-def connect():
-    max_wait= 10
-    #處理正在連線
+def connect():  
+
+    #等待連線或失敗
+    #status=0,1,2正在連線
+    #status=3連線成功
+    #<1,>=3失敗的連線
+    max_wait = 10    
+
     while max_wait > 0:
-        max_wait -= 1
-        status =  wlan.status()
-        if status < 0 or status >=3:  # 0,1,2:等待  3:連線成功 -1,-2,-3連線失敗
+        status = wlan.status()
+        if status < 0 or status >= 3:
             break
+        max_wait -= 1
         print("等待連線")
         time.sleep(1)
 
-
-    #沒有WIFI的處理
+    #處理錯誤
     if wlan.status() != 3:
-        #連線失敗，重新開機
-        #wdt = WDT(timeout=2000)
-        #wdt.feed()
-        raise RuntimeError("連線失敗") #開發可寫這行重RUN即可，當產品化時請用上面註解的寫法，讓產品關機重開
+        print('連線失敗,重新開機')
+        #raise RuntimeError('連線失敗')
+        wdt = WDT(timeout=2000)
+        wdt.feed()
     else:
-        print("連線成功")
-        print(wlan.ifconfig())
-        
+        print('連線成功')
+        status = wlan.ifconfig()
+        print(f'ip={status[0]}') 
         
         
 def reconnect():
-    if wlan.status() != 3:
-        print(f"無法連線{wlan.status()}")
+    if wlan.status() == 3: #還在連線,只是傳送的server無回應
+        print(f"無法連線({wlan.status()})")
         return
     else:
-        print("重新連線")
-        waln.disconnect()
-        wlan.connect(ssid,password)
+        print("嘗試重新連線")
+        wlan.disconnect()
+        wlan.connect(ssid, password)
         connect()
-                
+        
+        
+
+        
+
+
