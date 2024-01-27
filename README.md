@@ -37,6 +37,8 @@
 ![image](https://github.com/yovelachou/Yovela_pico_w/assets/42538114/49091cac-bd99-4c2a-8186-e83844619ad8)
 
 
+![1](https://github.com/yovelachou/Yovela_pico_w/assets/42538114/fee9a499-425a-447d-b5d3-70f022f8baa2)
+
 
 LINE NOTIFY 權杖
 vF4KX3t8lCjPqWXChUdhMKJh8uIx741yfyhCeEzW5Zd
