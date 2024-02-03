@@ -2,18 +2,19 @@ import streamlit as st
 import pandas as pd
 import requests
 from streamlit_autorefresh import st_autorefresh
-import dotenv
+from dotenv import load_dotenv
+import os
 
-dotenv.load()
+load_dotenv()
 
 st_autorefresh(interval=5000)
 
 st.title('Yovela的Pico_W專案')
 st.header('Pico :blue[cool] :sunglasses:', divider='red')
 # st.divider()
-#d8JG7182JhgWt3s7_vLxWWliHzDmXEKY
 
-url = 'https://blynk.cloud/external/api/get?token={os.environ}&V0&V1'
+
+url = f'https://blynk.cloud/external/api/get?token={os.environ["API_KEY"]}&V0&V1'
 response = requests.request("GET",url)
 if response.status_code ==200:
     all_data = response.json()
