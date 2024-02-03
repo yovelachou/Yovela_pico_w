@@ -3,7 +3,7 @@ import pandas as pd
 import requests
 from streamlit_autorefresh import st_autorefresh
 
-
+st_autorefresh(interval=5000)
 
 st.title('Pico_W專案123')
 st.header('Pico :blue[cool] :sunglasses:', divider='red')
