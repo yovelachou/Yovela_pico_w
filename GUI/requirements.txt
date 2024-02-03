@@ -1,4 +1,4 @@
 requests
 streamlit
 pandas
-streamlit-autorefresh
+streamlit_autorefresh
