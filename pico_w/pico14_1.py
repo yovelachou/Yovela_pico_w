@@ -2,6 +2,7 @@ from machine import Timer,Pin,ADC
 import time
 from tools import connect,reconnect
 import urequests as requests
+import dotenv
 
 
 def fun10(t:Timer | None = None):
