@@ -5,7 +5,7 @@ import requests
 
 
 st.title('Pico_W專案123')
-st.header('Pico :blue[cool] :sunglasses:', divider='red'
+st.header('Pico :blue[cool] :sunglasses:', divider='red')
 # st.divider()
 
 
