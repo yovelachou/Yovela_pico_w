@@ -5,7 +5,7 @@ from streamlit_autorefresh import st_autorefresh
 
 st_autorefresh(interval=5000)
 
-st.title('Pico_W專案123')
+st.title('Yovela的Pico_W專案')
 st.header('Pico :blue[cool] :sunglasses:', divider='red')
 # st.divider()
 
